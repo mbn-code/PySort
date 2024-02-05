@@ -3,12 +3,17 @@ import random
 import matplotlib.animation as animation
 import threading
 import time
+import multiprocessing
 
 def quick_sort(arr, low, high):
     if low < high:
         pivot_index = partition(arr, low, high)
-        quick_sort(arr, low, pivot_index)
-        quick_sort(arr, pivot_index + 1, high)
+        process1 = multiprocessing.Process(target=quick_sort, args=(arr, low, pivot_index))
+        process2 = multiprocessing.Process(target=quick_sort, args=(arr, pivot_index + 1, high))
+        process1.start()
+        process2.start()
+        process1.join()
+        process2.join()
 
 def partition(arr, low, high):
     pivot = arr[(low + high) // 2]
