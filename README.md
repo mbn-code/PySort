@@ -1,56 +1,51 @@
 # PySort
-Python Sorting Visualised. 
 
-# Sorting Algorithm Visualization
+Python Sorting Visualized.
 
-This repository contains a Python script that visualizes two sorting algorithms: QuickSort and BubbleSort. The script uses `matplotlib` to create an animated visualization of the sorting process.
+## Sorting Algorithm Visualization
+
+This repository contains a Python script that visualizes various sorting algorithms using `matplotlib` to create an animated visualization of the sorting process.
 
 ## Usage
 
-1. Make sure you have Python and `matplotlib` installed.
+1. Ensure you have Python and required dependencies installed:
 
-2. Copy the code from the `main.py` file into your Python environment or IDE.
+    ```bash
+    pip install matplotlib
+    ```
 
-3. Run the script. It will generate random data of a specified size and then sort it using the chosen algorithm (QuickSort by default).
+2. Run `src/main.py`
+3. Use the interactive interface to:
+   - Select sorting algorithms using buttons
+   - Adjust array size using the input box
+   - Control animation speed using the slider
+   - Reset data with the reset button
 
-4. The animated visualization will show the sorting process step by step.
+## Supported Sorting Algorithms
 
-5. The final sorted array will be displayed once the sorting process is complete.
+Currently implemented:
 
-## Sorting Algorithms
+- QuickSort (O(n log n) average case)
+- BubbleSort (O(n²))
 
-### QuickSort
+## Visualization Features
 
-QuickSort is a popular divide-and-conquer sorting algorithm. It partitions the input array into smaller subarrays and then recursively sorts each subarray. It has an average time complexity of O(n log n) and is often faster than other sorting algorithms for large datasets.
+- Interactive GUI with matplotlib
+- Real-time animation of sorting process
+- Color-coded visualization:
+  - Yellow: Elements being compared
+  - Red: Elements being swapped
+  - Light blue: Unsorted elements
+- Adjustable animation speed via slider
+- Customizable array size
+- Reset functionality to generate new random data
 
-### BubbleSort
+## Project Structure
 
-BubbleSort is a simple comparison-based sorting algorithm. It repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. It has a time complexity of O(n^2) and is not efficient for large datasets.
-
-## Visualization
-
-The visualization uses `matplotlib.animation` to display the sorting process in real-time. The bars in the plot represent the elements of the array, and their positions change as the sorting algorithm rearranges the elements.
-
-## Configuration
-
-You can customize the behavior of the script by modifying the following variables:
-
-- `arr_size`: Change the size of the dataset here.
-
-- `sorting_algorithm`: Set to `quick_sort` for QuickSort or `bubble_sort` for BubbleSort.
-
-- `is_random_data`: Set to `True` if data is initially random, `False` if pre-sorted.
-
-- `interval`: Adjust the interval (in milliseconds) between animation frames. Increase for slower animation, decrease for faster animation.
-
-## Contribution
-
-Contributions to this repository are welcome. If you find any issues or have improvements to suggest, feel free to open a pull request or an issue.
-
-## Credits
-
-The visualization code is inspired by online tutorials and examples. The sorting algorithms are implemented based on well-known algorithms.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+```bash
+src/
+├── main.py           # Main visualization interface
+└── includes/         # Sorting algorithm implementations
+    ├── quick.py      # QuickSort implementation
+    └── bubble.py     # BubbleSort implementation
+```
